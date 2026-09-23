@@ -1,0 +1,19 @@
+# Local kind cluster: kubectl apply -k overlays/local
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+  - postgres-secret.yaml
+  - backend-secret.yaml
+patches:
+  - path: configmap-urls.yaml
+# CI in sgtCrunch/gamebuddy-app sets these to ghcr.io/sgtCrunch/gamebuddy-*:<commit SHA>
+# on every push to main. "local" means images built and loaded by
+# scripts/kind-up.sh instead.
+images:
+  - name: gamebuddy-backend
+    newTag: 078d2426fd26e6129c9b143adcbb5d2f5ac6eda1
+    newName: ghcr.io/sgtCrunch/gamebuddy-backend
+  - name: gamebuddy-frontend
+    newTag: 078d2426fd26e6129c9b143adcbb5d2f5ac6eda1
+    newName: ghcr.io/sgtCrunch/gamebuddy-frontend
