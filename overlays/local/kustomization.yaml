@@ -12,8 +12,8 @@ patches:
 # scripts/kind-up.sh instead.
 images:
   - name: gamebuddy-backend
-    newTag: 26a26ec0e38f567b880785fe7b8c1e0f7204b993
+    newTag: cf3db85d19db7839a5fa7c7de0bad7ed62657d03
     newName: ghcr.io/sgtcrunch/gamebuddy-backend
   - name: gamebuddy-frontend
-    newTag: 26a26ec0e38f567b880785fe7b8c1e0f7204b993
+    newTag: cf3db85d19db7839a5fa7c7de0bad7ed62657d03
     newName: ghcr.io/sgtcrunch/gamebuddy-frontend
