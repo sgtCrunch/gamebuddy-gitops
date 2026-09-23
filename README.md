@@ -44,7 +44,7 @@ kubectl -n gamebuddy port-forward svc/backend 3001:3001 4000:4000 &
 ## How a deploy happens
 
 1. A push to `main` in the app repo runs its CI workflow: tests, then builds
-   `ghcr.io/sgtCrunch/gamebuddy-backend` and `-frontend` tagged with the commit SHA.
+   `ghcr.io/sgtcrunch/gamebuddy-backend` and `-frontend` tagged with the commit SHA.
 2. The last CI step commits here, setting `images:` in
    `overlays/local/kustomization.yaml` to that SHA
    (commit message `Deploy sgtCrunch/gamebuddy-app@<sha>`).
